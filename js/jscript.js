@@ -2,10 +2,10 @@ $(document).ready(function() {
     var newGrid = 16;
     MakeGrid(newGrid);
     Navbar();
-    resizer();
+    Resizer();
 });
 
-function resizer() {
+function Resizer() {
     interact('.gridsquare').draggable({
         // enable inertial throwing
         inertia: true,
