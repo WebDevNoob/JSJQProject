@@ -1,35 +1,7 @@
 $(document).ready(function() {
     var newGrid = 16;
     MakeGrid(newGrid);
-    $(".clear").click(function() {
-        $(".gridsquare").css("background", "white").css(
-            'opacity', '1').css('height', '10px').css(
-            'width', '10px').css('transform', '');
-    });
-    $(".new").click(function() {
-        var newGrid = prompt("Enter new grid size:", 16);
-        //$(".gridsquare").remove();
-        $(".row").remove();
-        MakeGrid(newGrid);
-    });
-    $(".opacity").click(function() {
-        $(".gridsquare").unbind();
-        $(".gridsquare").mouseenter(function() {
-            reduceOpacity($(this));
-        })
-    });
-    $(".random").click(function() {
-        $(".gridsquare").unbind();
-        $(".gridsquare").mouseenter(function() {
-            $(this).css("background", randomColor());
-        });
-    });
-    $(".normal").click(function() {
-        $(".gridsquare").unbind();
-        $(".gridsquare").mouseenter(function() {
-            $(this).css("background", "black");
-        });
-    });
+    Navbar();
     resizer();
 });
 
@@ -85,6 +57,38 @@ function MakeGrid(size) {
         $(this).css("background", "black");
     });
 };
+
+function Navbar(){
+	$(".clear").click(function() {
+        $(".gridsquare").css("background", "white").css(
+            'opacity', '1').css('height', '10px').css(
+            'width', '10px').css('transform', '');
+    });
+    $(".new").click(function() {
+        var newGrid = prompt("Enter new grid size:", 16);
+        //$(".gridsquare").remove();
+        $(".row").remove();
+        MakeGrid(newGrid);
+    });
+    $(".opacity").click(function() {
+        $(".gridsquare").unbind();
+        $(".gridsquare").mouseenter(function() {
+            reduceOpacity($(this));
+        })
+    });
+    $(".random").click(function() {
+        $(".gridsquare").unbind();
+        $(".gridsquare").mouseenter(function() {
+            $(this).css("background", randomColor());
+        });
+    });
+    $(".normal").click(function() {
+        $(".gridsquare").unbind();
+        $(".gridsquare").mouseenter(function() {
+            $(this).css("background", "black");
+        });
+    });
+}
 
 function dragMoveListener(event) {
     var target = event.target,
