@@ -88,7 +88,14 @@ function Navbar(){
             $(this).css("background", "black");
         });
     });
+    $(".usercolor").click(function(){
+        $(".gridsquare").unbind();
+        $(".gridsquare").mouseenter(function() {
+            $(this).css("background-color", ('#' + document.getElementById('myColor').value));
+        });
+    });
 }
+ 
 
 function dragMoveListener(event) {
     var target = event.target,
